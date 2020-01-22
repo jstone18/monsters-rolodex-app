@@ -18,7 +18,7 @@ class App extends Component {
 			.then(users => this.setState({ monsters: users }));
 	}
 
-	onInputChange = event => {
+	handleSearchChange = event => {
 		this.setState({
 			searchField: event.target.value
 		});
@@ -31,7 +31,7 @@ class App extends Component {
 		);
 		return (
 			<div className="App">
-				<Search onInputChange={this.onInputChange} />
+				<Search handleSearchChange={this.handleSearchChange} />
 				<CardList monsters={filteredMonsters} />
 			</div>
 		);
